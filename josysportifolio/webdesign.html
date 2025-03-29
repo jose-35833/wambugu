@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design</title>
+    <link rel="shortcut icon" href="p5.jpg">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            color: #ededed;
+            background: #081b29;
+            user-select: none;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: #051129;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: default;
+        }
+        .navbar {
+            display: flex;
+        }
+        .navbar a {
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+        .navbar a:hover {
+            color: #0ef;
+        }
+        /* General Styling */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ef;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar Links */
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #051129;
+    min-width: 120px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px #0ef; /* Added cyan glow */
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #0ef;
+    color: #000;
+}
+
+/* Show Dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Menu Styling */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #051129;
+        width: 200px;
+        text-align: left;
+        padding: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0 0 15px #0ef; /* Full menu cyan glow */
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin: 10px 15px;
+    }
+
+    /* Dropdown in Mobile */
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+        /* Web Design Section */
+        .web-design {
+            padding: 100px 10%;
+            text-align: center;
+            border: 2px solid #0ef;
+            box-shadow: 0px 0px 15px rgba(0, 238, 255, 0.6);
+            border-radius: 10px;
+            margin: 100px auto 50px;
+            max-width: 800px;
+            background: rgba(5, 17, 41, 0.8);
+        }
+        .web-design h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .web-design p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .last-text {
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: rgb(7, 85, 91);
+            margin-top: 70px;
+            font-weight: 300;
+        }
+        /* Scroll to Top Button */
+        .top {
+            display: none;
+            position: fixed;
+            bottom: 2.1rem;
+            right: 2.1rem;
+            color: #000;
+            background: #0ef;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .top.show {
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Prevent Right Click
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            });
+
+            // Prevent Certain Key Combinations
+            document.addEventListener("keydown", function (e) {
+                if (e.ctrlKey && ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase())) {
+                    e.preventDefault();
+                }
+            });
+
+            // Show 'Back to Top' Button
+            window.onscroll = function () {
+                var topButton = document.querySelector('.top');
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    topButton.style.display = "block";
+                } else {
+                    topButton.style.display = "none";
+                }
+            };
+
+            // Smooth Scroll Fix for Fragment Navigation
+            if (window.location.hash) {
+                let element = document.querySelector(window.location.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        });
+
+    </script>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class='bx bx-menu'></i></div>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="index.html#about">About</a>
+            
+            <div class="dropdown">
+                <a href="#services" class="dropbtn">Services ▼</a>
+                <div class="dropdown-content">
+                    <a href="webdesign.html">Web Development</a>
+                    <a href="uiux.html">UI/UX Design</a>
+                    <a href="app.html">App Design</a>
+                </div>
+            </div>
+
+            <a href="index.html#skills" style="--i:4">Skills</a>
+            <a href="index.html#project" style="--i:5">Portfolio</a>
+            <a href="index.html#contact" style="--i:6">Contact</a>
+        </nav>
+    </header>
+
+    <section class="web-design">
+        <h1 style="color: #0ef;">Web Design</h1>
+        <p>I specialize in crafting visually stunning, user-friendly, and responsive websites that enhance user experience and drive engagement. My approach to web design focuses on clean aesthetics, intuitive navigation, and high-performance functionality to create a seamless digital experience.
+</p>
+          <h3> My Web Design Approach</h3>
+            <p>✅ User-Centered Design – Every website I create is designed with the user in mind, ensuring a smooth and enjoyable experience.</p>
+            <p>✅ Responsive & Mobile-Optimized – I develop websites that adapt seamlessly across all devices, from desktops to smartphones.</p>
+            <p>✅ Modern & Minimalist Aesthetics – Clean, professional, and engaging visuals that align with the latest design trends.</p>
+            <p>✅ Performance & SEO Optimization – I ensure fast-loading pages with optimized code and SEO-friendly structures for better search engine ranking.</p>
+            <p>✅ Interactive & Engaging Elements – From animations to micro-interactions, I incorporate dynamic features that enhance usability.</p>
+            
+            <h3>Tools & Technologies I Use</h3>
+            <p>🔹 Design Tools: Figma, Adobe XD, Photoshop</p>
+            <p>🔹 Frontend Development: HTML, CSS, JavaScript, React.js</p>
+            <p>🔹 Frameworks & Libraries: Bootstrap, Tailwind CSS</p>
+            <p>🔹 CMS Platforms: WordPress, Webflow</p>
+            <p>🔹 Performance Optimization: Lighthouse, GTmetrix, Core Web Vitals</p>
+            
+            <h3>My Work</h3>
+           <p> Here are some of my recent web design projects:</p>
+            <p>📌 [Project 1: Banking Website] – A modern banking interface designed for seamless transactions and user-friendly navigation. Technologies used; html, css and JavaScript</p>
+            <p>📌 [Project 2: Contact Form] – A sleek and intuitive contact form designed for easy user communication. Technologies used; html, css and JavaScript</p>
+            <p>📌 [Project 3: Calendar] – An interactive calendar interface for scheduling and managing events efficiently. Technologies used; html, css and JavaScript</p>
+            
+           <p> 💡 Need a website that stands out? Let’s build something amazing together! 🚀</p>
+        
+    </section>
+
+    <div class="last-text">
+        <p>Developed With Love By Joseph Wambugu &copy; 2022</p>
+    </div>
+
+    <a href="#" class="top" id="scrollTopButton"><i class='bx bx-up-arrow-alt bx-fade-down'></i></a>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.navbar').classList.toggle('active');
+        }
+
+        const scrollTopButton = document.getElementById("scrollTopButton");
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 200) {
+                scrollTopButton.classList.add("show");
+            } else {
+                scrollTopButton.classList.remove("show");
+            }
+        });
+
+        scrollTopButton.addEventListener("click", function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+</html>

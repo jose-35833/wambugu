@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Banking System</title>
+    <link rel="shortcut icon" href="bank1.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            background-image: url(bank2.jpg); 
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        h2{
+            color:white;
+        }
+
+        header {
+            background-color: #004d99;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        nav .links {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
+        }
+
+        nav .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px; /* Add spacing between links */
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav .links a:hover {
+            color: #ffcc00;
+        }
+
+        nav .links a.active {
+            color: #ffcc00; /* Change color for active link */
+        }
+
+        footer {
+            text-align: center;
+            background: #004d99;
+            color: white;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        .wrapper {
+            padding: 20px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .service-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #004d99;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .service-card p {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            nav .links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav .links a {
+                margin: 10px 0; /* Adjust margin for better spacing */
+            }
+
+            .wrapper {
+                width: 90%;
+            }
+
+            .service-card {
+                width: 90%; /* Make service cards responsive */
+                margin: 10px auto; /* Center the cards */
+            }
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Prevent Right Click
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            });
+
+            // Prevent Certain Key Combinations
+            document.addEventListener("keydown", function (e) {
+                if (e.ctrlKey && ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase())) {
+                    e.preventDefault();
+                }
+            });
+
+            // Show 'Back to Top' Button
+            window.onscroll = function () {
+                var topButton = document.querySelector('.top');
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    topButton.style.display = "block";
+                } else {
+                    topButton.style.display = "none";
+                }
+            }});
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Weza Bank</div>
+            <div class="links">
+                <a href="index.html"><i class='fa-solid fa-home'></i> Home</a>
+                <a href="services.html" class="active"><i class='fa-solid fa-briefcase'></i> Services</a>
+                <a href="accounts.html"><i class='fa-solid fa-user'></i> Accounts</a>
+                <a href="contact.html"><i class='fa-solid fa-envelope'></i> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <h2>Our Banking Services</h2>
+            <div class="service-card">
+                <i class="fa-solid fa-wallet"></i>
+                <h3>Account Management</h3>
+                <p>Manage your bank account easily, check balances, and track your financial activity.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-money-bill"></i>
+                <h3>Deposits & Withdrawals</h3>
+                <p>Make deposits and withdraw cash from your account securely.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Loan Services</h3>
+                <p>Access various loan options to help with personal and business needs.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-piggy-bank"></i>
+                <h3>Savings Accounts</h3>
+                <p>Open a savings account with us and start earning interest on your deposits.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Bank. All rights reserved.</p>
+        <p>Contact: wezabank@gmail.com | +254 702 729 526</p>
+    </footer>
+
+</body>
+</html>

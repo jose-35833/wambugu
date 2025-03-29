@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Development</title>
+    <link rel="shortcut icon" href="p5.jpg">
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+        color: #ededed;
+        background: #081b29;
+        user-select: none;
+    }
+    
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 10%;
+        background: #051129;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .navbar {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background: #051129;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    
+        .navbar.active {
+            display: flex;
+        }
+    }
+    
+    .logo {
+        font-size: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: default;
+    }
+    
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .menu-toggle div {
+        width: 30px;
+        height: 3px;
+        background: #fff;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+    
+    .navbar a {
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 35px;
+        transition: .3s;
+    }
+    
+    .navbar a:hover {
+        color: #0ef;
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropbtn {
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 500;
+        transition: .3s;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #051129;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+    }
+    
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        display: block;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .dropdown-content a:hover {
+        background: #0ef;
+        color: #081b29;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+        }
+        .navbar {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background: #051129;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .navbar.active {
+            display: flex;
+        }
+        .navbar a {
+            margin: 10px 0;
+        }
+    }
+    
+    .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 100px 5%;
+        text-align: center;
+        border: 2px solid cyan;
+        box-shadow: 0 0 10px cyan;
+        max-width: 900px;
+        margin: 100px auto;
+    }
+    
+    .about-text h2 {
+        font-size: 60px;
+    }
+    
+    .about-text h4 {
+        font-size: 29px;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.7;
+        margin: 15px 0 30px;
+    }
+    
+    .about-text p {
+        color: aliceblue;
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 4rem;
+    }
+    
+    /* Remove bullets from all lists */
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    li {
+        padding-left: 15px; /* Add some padding for spacing */
+        position: relative;
+    }
+    
+    /* Optional: Add a custom icon instead of bullet */
+    li::before {
+        content: "✔"; /* Custom checkmark */
+        color: #0ef;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+    
+    .read {
+        display: inline-block;
+        padding: 12px 28px;
+        background: #0ef;
+        border-radius: 40px;
+        font-size: 16px;
+        color: #081b29;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-weight: 600;
+        animation: slideTop 1s ease forwards;
+        animation-delay: 2s;
+        box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    }
+    
+    .read:hover {
+        box-shadow: 0 0 5px cyan, 0 0 25px cyan,
+        0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+    }
+    
+    .app-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .app-image {
+        position: relative;
+    }
+    
+    .app-image img {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+    
+    .app-image:hover img {
+        transform: scale(1.05);
+    }
+    
+    .app-info {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .app-image:hover .app-info {
+        opacity: 1;
+    }
+    
+    .last-text {
+        text-align: center;
+        padding: 25px 0;
+        background: rgb(7, 85, 91);
+        margin-top: 70px;
+        font-weight: 300;
+    }
+    
+    .top {
+        display: none;
+        position: fixed;
+        bottom: 2.1rem;
+        right: 2.1rem;
+        color: #000;
+        background: #0ef;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+    
+    .top:hover {
+        background: cyan;
+    }
+    
+    </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.navbar').classList.toggle('active');
+        }
+        
+        window.onscroll = function() {
+            var topButton = document.querySelector('.top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        };
+
+        
+            document.addEventListener("DOMContentLoaded", function () {
+                // Prevent Right Click
+                document.addEventListener("contextmenu", function (e) {
+                    e.preventDefault();
+                });
+    
+                // Prevent Certain Key Combinations
+                document.addEventListener("keydown", function (e) {
+                    if (e.ctrlKey && ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase())) {
+                        e.preventDefault();
+                    }
+                });
+    
+                // Show 'Back to Top' Button
+                window.onscroll = function () {
+                    var topButton = document.querySelector('.top');
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        topButton.style.display = "block";
+                    } else {
+                        topButton.style.display = "none";
+                    }
+                };
+    
+                // Smooth Scroll Fix for Fragment Navigation
+                if (window.location.hash) {
+                    let element = document.querySelector(window.location.hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                    }
+                }
+            });
+    
+        
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <div class="dropdown">
+                <a class="dropbtn">Services ▼</a>
+                <div class="dropdown-content">
+                    <a href="webdesign.html">Web Development</a>
+                    <a href="uiux.html">UI/UX Design</a>
+                    <a href="app.html">App Design</a>
+                </div>
+            </div>
+            <a href="index.html#skills" style="--i:4">Skills</a>
+            <a href="index.html#project" style="--i:5">Portfolio</a>
+            <a href="index.html#contact" style="--i:6">Contact</a>
+        </nav>
+    </header>
+
+
+    <section class="about">
+        <div class="about-text">
+            <h2 style="color: #0ef;">App Development Services</h2>
+
+<h4>Experienced & Innovative App Development</h4>
+<p>With three years of experience in app development, I specialize in building <strong>high-performance, scalable, and user-friendly mobile and web applications</strong>. My expertise spans across multiple platforms, ensuring that every app I create is <strong>efficient, intuitive, and aligned with industry standards</strong>.</p>
+
+<h4>Cross-Platform & Native Development</h4>
+<p>I develop applications for <strong>Android, iOS, and web</strong> using both <strong>native</strong> and <strong>cross-platform technologies</strong>. Whether it’s <strong>React Native, Flutter, or native development with Swift/Kotlin</strong>, I ensure seamless performance and an optimized user experience across all devices.</p>
+
+<h4>User-Centric & Engaging UI/UX</h4>
+<p>A great app is not just functional but also <strong>visually appealing and easy to navigate</strong>. I focus on <strong>intuitive UI/UX design</strong>, ensuring that users enjoy a smooth and engaging experience from start to finish.</p>
+
+<h4>Full-Stack Development Capabilities</h4>
+<p>From <strong>frontend UI design</strong> to <strong>backend API development</strong>, I offer full-stack app development solutions. I integrate <strong>databases, authentication systems, cloud services, and APIs</strong> to create powerful, feature-rich applications.</p>
+
+<h4>App Features & Functionalities I Offer</h4>
+<p>Every app I build is tailored to <strong>meet user needs and business goals</strong>. Some of the key features I implement include:</p>
+<ul>
+    <li><strong>User Authentication & Security</strong> (OAuth, Firebase Authentication, JWT)</li>
+    <li><strong>Real-Time Data & Cloud Integration</strong> (Firebase, AWS, Google Cloud)</li>
+    <li><strong>Push Notifications & In-App Messaging</strong></li>
+    <li><strong>Payment Gateway Integration</strong> (Stripe, PayPal, Flutterwave)</li>
+    <li><strong>Offline Functionality & Data Synchronization</strong></li>
+    <li><strong>AI-Powered Features & Chatbots</strong></li>
+</ul>
+
+<h4>Technologies & Tools I Use</h4>
+<p>I utilize the latest technologies and frameworks to build <strong>scalable and efficient applications</strong>:</p>
+<ul>
+    <li><strong>Frontend:</strong> React Native, Flutter, Swift (iOS), Kotlin (Android)</li>
+    <li><strong>Backend:</strong> Node.js, Firebase, Express.js, Django</li>
+    <li><strong>Databases:</strong> MongoDB, PostgreSQL, Firebase Realtime Database</li>
+    <li><strong>Version Control & CI/CD:</strong> Git, GitHub Actions, Bitbucket</li>
+</ul>
+
+<h4>Why Choose My App Development Services?</h4>
+<ul>
+    <li><strong>Custom-Tailored Solutions</strong> – I develop apps that align with your business needs and user expectations.</li>
+    <li><strong>Performance & Optimization</strong> – Fast, secure, and optimized applications for the best user experience.</li>
+    <li><strong>Agile Development Process</strong> – Transparent, iterative, and efficient development from concept to deployment.</li>
+    <li><strong>Post-Launch Support & Maintenance</strong> – Continuous updates, bug fixes, and improvements.</li>
+</ul>
+
+<h4>Let’s Build Your Next App Together!</h4>
+<p>Whether you need a <strong>business app, e-commerce platform, social networking app, or any custom solution</strong>, I am here to help! Let’s bring your idea to life with cutting-edge technology and seamless user experience. 🚀</p>
+
+            <a href="index.html#contact" class="read">Contact Me</a>
+        </div>
+        
+        <div class="app-images">
+            <div class="app-image">
+                <img src="app1.jpg" alt="App 1">
+                <div class="app-info">App 1: Innovative solution for task management.</div>
+            </div>
+            <div class="app-image">
+                <img src="app2.jpg" alt="App 2">
+                <div class="app-info">App 2: User-friendly interface for seamless navigation.</div>
+            </div>
+            <div class="app-image">
+                <img src="app.jpg" alt="App 3">
+                <div class="app-info">App 3: Engaging design for enhanced user experience.</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p>Developed With Love By Joseph Wambugu &copy;2022</p>
+        <a href="#" class="top">&#8593;</a>
+    </div>
+</body>
+</html>

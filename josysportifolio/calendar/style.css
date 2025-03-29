@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #dfe6d9;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    width: 100%;
+    max-width: 600px; /* Max width for better scaling on larger screens */
+}
+
+.container .calendar {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Digital Clock */
+.container .digital_clock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 15px;
+    background-color: #009184;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    text-align: center;
+}
+
+.digital_clock .time {
+    font-size: 24px;
+    color: #fff;
+}
+
+.digital_clock:hover {
+    background: linear-gradient(to top, #008184 0%, #005658 100%);
+}
+
+.digital_clock .format {
+    font-size: 16px;
+}
+
+/* Month navigation */
+.calendar .month {
+    width: 100%;
+    background-color: #009184;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.month h2 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+
+.month p {
+    font-size: 1.1rem;
+}
+
+.month .arrow {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    line-height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.month .arrow:hover {
+    background-color: #005758;
+}
+
+/* Weekdays */
+.container .week {
+    display: flex;
+    background-color: #016d6f;
+    color: #fff;
+}
+
+.week div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    transition: 0.4s;
+}
+
+.week .active {
+    background-color: #005758;
+}
+
+.week div:hover {
+    background-color: #005758;
+}
+
+/* Dates */
+.container .dates {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+}
+
+.dates div {
+    width: 74px;
+    height: 55px;
+    margin: 2px;
+    text-align: center;
+    line-height: 53px;
+    border: 3px solid #e9e9e9;
+    transition: 0.2s;
+}
+
+.dates .today {
+    background-color: #008184;
+    color: #fff;
+}
+
+.dates .today:hover {
+    background-color: #016d6f;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.dates div:hover:not(.today) {
+    border: 3px dashed #111;
+    background-color: #fefefe;
+    color: #008184;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-box-reflect: below 4px linear-gradient(transparent, #0000004d);
+}
+
+.dates .prev, .dates .next {
+    opacity: 0.5;
+}
+
+.dates .prev:hover, .dates .next:hover {
+    opacity: 1;
+}
+
+/* Responsive design */
+
+/* Mobile (phones) */
+@media (max-width: 480px) {
+    .container .calendar {
+        width: 100%;
+        height: auto;
+    }
+
+    .container .digital_clock {
+        font-size: 14px;
+        padding: 10px;
+        width: auto;
+    }
+
+    .month h2 {
+        font-size: 1.4rem;
+    }
+
+    .month p {
+        font-size: 1rem;
+    }
+
+    .week div {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+
+    .dates div {
+        width: 60px;
+        height: 50px;
+        font-size: 14px;
+        line-height: 48px;
+    }
+
+    .dates .today {
+        font-size: 16px;
+    }
+
+    .dates div:hover:not(.today) {
+        font-size: 14px;
+    }
+}
+
+/* Tablet (small screens) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .month h2 {
+        font-size: 1.5rem;
+    }
+
+    .week div {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+
+    .dates div {
+        width: 70px;
+        height: 55px;
+        font-size: 15px;
+    }
+
+    .dates .today {
+        font-size: 18px;
+    }
+
+    .container .digital_clock {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+/* Desktop (larger screens) */
+@media (min-width: 769px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .calendar {
+        width: 100%;
+    }
+
+    .month h2 {
+        font-size: 1.8rem;
+    }
+
+    .week div {
+        font-size: 1.1rem;
+        padding: 12px 0;
+    }
+
+    .dates div {
+        width: 74px;
+        height: 55px;
+        font-size: 16px;
+        line-height: 53px;
+    }
+
+    .dates .today {
+        font-size: 20px;
+    }
+
+    .container .digital_clock {
+        font-size: 18px;
+        padding: 20px;
+    }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+    }
+
+    .calendar {
+        width: 100%;
+    }
+
+    .month h2 {
+        font-size: 2rem;
+    }
+
+    .dates div {
+        width: 80px;
+        height: 60px;
+        font-size: 18px;
+    }
+}

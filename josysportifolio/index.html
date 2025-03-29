@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="p5.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "389kaNhM06CA9HZH8",
+      });
+    })();
+    </script>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+    
+        <!-- Mobile Menu Toggle Button -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    
+        <nav class="navbar" id="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="index.html#about">About</a>
+    
+            <!-- Dropdown Menu -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Services ▼</a>
+                <div class="dropdown-content">
+                    <a href="webdesign.html">Web Development</a>
+                    <a href="uiux.html">UI/UX Design</a>
+                    <a href="app.html">App Design</a>
+                </div>
+            </div>
+    
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#project">Portfolio</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+    
+    <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+    
+        function toggleDropdown(event) {
+            event.preventDefault();
+            event.target.closest(".dropdown").classList.toggle("active");
+        }
+    </script>
+    
+
+    <section class="home">
+        <div class="home-container">
+            <div class="home-content">
+                <h3>Hello, It's Me</h3>
+                <h1>Josy</h1>
+                <h3>And I'm a <span class="text" style="color: cyan; font-size:29px;"></span></h3>
+                <p>I'm a web designer with extensive experience for over 3 years.
+                    <br>Expertise includes website design, Frontend, and Backend, and much more...</p>
+                <div class="home-sci">
+                    <a href="https://www.facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://www.whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="https://www.tiktok.com" target="_blank"><i class='bx bxl-tiktok' ></i></a>
+                </div>
+                <a href="#about" class="btn-box">More About Me</a>
+            </div>
+            <div class="home-imghover">
+                <img src="josee_prev_ui.png" alt="Josy Image" width="400">
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="josee_prev_ui.png" alt="" width="400">
+        </div>
+        <div class="about-text">
+            <h2>About <span>Me</span></h2>
+            <h4>Full Stack Developer</h4>
+            <p>I'm a passionate web developer, with 3 years experience, specializing in creating high-performance, user-friendly websites and applications. 
+                With expertise in front-end and back-end development, I build scalable solutions that enhance user experience and
+                drive business growth. I focus on clean code, modern frameworks, and responsive design to deliver top-tier results.
+                Let’s bring your ideas to life!</p>
+            <a href="more.html" class="btn-box">More About Me</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="services" id="services">
+            <div class="container">
+                <div class="sub-title">
+                    <h1 class="sub-title">My <span>Services</span></h1>
+                    <div class="services-list">
+                        <div>
+                            <i class='bx bx-code' style='color:#00eeff'></i>
+                            <h2>Web Development</h2>
+                            <p>With three years of experience as a web designer, 
+                               I specialize in crafting responsive, visually appealing, 
+                               and user-friendly websites. 
+                               My expertise includes UI/UX design, front-end development, 
+                               and optimizing website performance to enhance user engagement 
+                               and functionality, ensuring 
+                                professional and innovative web solutions for clients.</p>
+                            <a href="webdesign.html" class="read">learn more</a>
+                        </div>
+                        <div>
+                            <i class='bx bx-crop' style='color:#00eeff'></i>
+                            <h2>UI/UX Design</h2>
+                            <p>I am a UI/UX designer with three years of experience, 
+                                specializing in creating intuitive, user-centered designs. 
+                                My expertise includes wireframing, prototyping, and front-end design, 
+                                ensuring seamless digital experiences that balance aesthetics, 
+                                functionality, and user satisfaction.</p>
+                            <a href="uiux.html" class="read">learn more</a>
+                        </div>
+                        <div>
+                            <i class='bx bxl-apple' style='color:#00eeff'></i>
+                            <h2>App Design</h2>
+                            <p>Passionate about crafting seamless digital experiences, 
+                                I am an app designer with three years of experience. 
+                                I specialize in intuitive UI/UX design, wireframing, prototyping, and interactive design, 
+                                ensuring user-friendly and visually appealing applications that enhance engagement and 
+                                functionality across various platforms.</p>
+                            <a href="app.html" class="read">learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h1 class="sub-title">My <span>Skills</span></h1>
+
+    <section>
+        <div class="container1" id="skills">
+            <h1 class="heading1">Technical Skills</h1>
+            <div class="Technical-bars">
+                <div class="bar"><i style="color: rgb(238, 116, 17)" class='bx bxl-html5'></i>
+                    <div class="info">
+                        <span>HTML</span>
+                    </div>
+                    <div class="progress-line html">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color: rgb(17, 87, 238)" class='bx bxl-css3'></i>
+                    <div class="info">
+                        <span>CSS</span>
+                    </div>
+                    <div class="progress-line css">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color: rgb(223, 238, 17)" class='bx bxl-javascript'></i>
+                    <div class="info">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="progress-line JavaScript">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color: rgb(238, 17, 201)" class='bx bxl-python'></i>
+                    <div class="info">
+                        <span>Python</span>
+                    </div>
+                    <div class="progress-line python">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bar"><i style="color: rgb(17, 186, 238)" class='bx bxl-react'></i>
+                    <div class="info">
+                        <span>React</span>
+                    </div>
+                    <div class="progress-line react">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container1">
+            <h1 class="heading1">Professional Skills</h1>
+            <div class="radial-bars">
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">90%</div>
+                    <div class="text">Creativity</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">65%</div>
+                    <div class="text">Communication</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">75%</div>
+                    <div class="text">Problem Solving</div>
+                </div>
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="percentage">85%</div>
+                    <div class="text">Teamwork</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="portfolio" id="project">
+            <div class="main-text" id="project">
+                <h2>Latest <span>Project</span></h2>
+                <div class="portfolio-content">
+                    <div class="row">
+                        <img src="bank.png" alt="latest project">
+                        <div class="layer">
+                            <h5>Web Design</h5>
+                            <p>A modern banking interface designed for seamless transactions and user-friendly navigation.</p>
+                            <a href="BANKING WEBSITE/index.html" target="_blank"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="contactform.png" alt="latest project">
+                        <div class="layer">
+                            <h5>Web Design</h5>
+                            <p>A sleek and intuitive contact form designed for easy user communication.</p>
+                            <a href="contactjs/index.html" target="_blank"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="calendar.png" alt="latest project">
+                        <div class="layer">
+                            <h5>Web Design</h5>
+                            <p>An interactive calendar interface for scheduling and managing events efficiently.</p>
+                            <a href="calendar/index.html" target="_blank"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact2" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span>Me</span></h2>
+            <h4>Let's Work Together</h4>
+        </div>
+        
+        <div class="container2">
+            <div class="contact-info">
+                <h1>Hi there!</h1>
+                <p>
+                    Need to get in touch? Use the contact form to send us a message. Simply enter your <strong>Name</strong>, 
+                    <strong>Email</strong>, and your <strong>Message</strong>, and we’ll get back to you as soon as possible.
+                </p>
+                <p>📩 Email: [Your Email]</p>
+                <p>🏷️ Name: [Your Name]</p>
+                <p>✉️ Message: [Your Message]</p>
+                <h3>Contact Us</h3>
+                <div class="contact-list">
+                    <li><i class='bx bx-mail-send'></i> contact@gmail.com</li>
+                    <li><i class='bx bx-phone'></i> 0123456789</li>
+                </div>
+                
+                <p>We look forward to hearing from you!</p>
+                <div class="contact-icons">
+                    <a href="https://www.facebeek.com" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h1>Contact form</h1>
+                <div class="form-group">
+                    <h5 for="name">Name</h5>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <h5 for="email">Email</h5>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <h5 for="message">Message</h5>
+                    <textarea id="message" rows="3" placeholder="Enter your message"></textarea>
+                </div>
+                <button class="btn-submit" onclick="sendMail()">Submit</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="last-text">
+        <p>Developed With Love By Joseph Wambugu &copy;2022</p>
+        <a href="#" class="top"><i class='bx bx-up-arrow-alt bx-fade-down' ></i></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

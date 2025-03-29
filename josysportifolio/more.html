@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Boxicons for Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="p5.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            color: #ededed;
+            background: #081b29;
+            user-select: none;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #051129;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }/* General Styling */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0ef;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropbtn {
+    cursor: pointer;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #051129;
+    min-width: 120px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px #0ef; /* Added cyan glow */
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #0ef;
+    color: #000;
+}
+
+/* Show Dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #051129;
+        width: 200px;
+        text-align: left;
+        padding: 10px 0;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin: 10px 15px;
+    }
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 100px auto 50px;
+            padding: 20px;
+            background: #081b29;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #0ef;
+        }
+        p {
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        /* Skills */
+        .skills {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .skills h3 {
+            color: #0ef;
+        }
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .skill {
+            text-align: center;
+            width: 100px;
+        }
+        .skill i {
+            font-size: 50px;
+            color: #0ef;
+            margin-bottom: 10px;
+        }
+
+        /* Learn More Button */
+        .read {
+            display: inline-block;
+            background: #0ef;
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .read:hover {
+            background: #ffcc00;
+        }
+
+        /* Footer */
+        .last-text {
+            text-align: center;
+            padding: 25px 0;
+            background: rgb(7, 85, 91);
+            margin-top: 70px;
+            font-weight: 300;
+        }
+
+        /* Back to Top Button */
+        .top {
+            display: none;
+            position: fixed;
+            bottom: 2.1rem;
+            right: 2.1rem;
+            background: #0ef;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+        .top:hover {
+            background: #ffcc00;
+        }
+
+       
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Prevent Right Click
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            });
+
+            // Prevent Certain Key Combinations
+            document.addEventListener("keydown", function (e) {
+                if (e.ctrlKey && ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase())) {
+                    e.preventDefault();
+                }
+            });
+
+            // Show 'Back to Top' Button
+            window.onscroll = function () {
+                var topButton = document.querySelector('.top');
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    topButton.style.display = "block";
+                } else {
+                    topButton.style.display = "none";
+                }
+            };
+
+            // Smooth Scroll Fix for Fragment Navigation
+            if (window.location.hash) {
+                let element = document.querySelector(window.location.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        });
+
+        function toggleMenu() {
+            var navbar = document.querySelector(".navbar");
+            navbar.style.display = navbar.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class='bx bx-menu'></i></div>
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="index.html#about">About</a>
+            
+            <div class="dropdown">
+                <a href="#services" class="dropbtn">Services ▼</a>
+                <div class="dropdown-content">
+                    <a href="webdesign.html">Web Development</a>
+                    <a href="uiux.html">UI/UX Design</a>
+                    <a href="app.html">App Design</a>
+                </div>
+            </div>
+
+            <a href="index.html#skills" style="--i:4">Skills</a>
+            <a href="index.html#project" style="--i:5">Portfolio</a>
+            <a href="index.html#contact" style="--i:6">Contact</a>
+        </nav>
+    </header>
+
+
+    
+<!-- Content -->
+<div class="container">
+    <h2>About Me</h2>
+    I am a Full Stack Developer with three years of experience in web development, UI/UX design, and mobile app design. I specialize in crafting intuitive and high-performing digital solutions that enhance user engagement and functionality. My expertise extends across both front-end and back-end technologies, enabling me to develop fully integrated applications that are not only visually appealing but also robust and scalable.
+
+As a UI/UX designer, I focus on creating user-centered designs that ensure seamless and enjoyable interactions. My skill set includes wireframing, prototyping, user research, and front-end design, allowing me to transform ideas into visually engaging and highly functional digital experiences. I emphasize usability, accessibility, and modern aesthetics to deliver products that meet both business goals and user needs.
+
+With a deep understanding of design principles, development frameworks, and responsive interfaces, I bridge the gap between design and development, ensuring that every project I work on is both technically sound and visually compelling. My approach is driven by innovation, attention to detail, and a passion for crafting high-quality digital solutions.
+
+I am always eager to learn and adapt to new technologies, continuously improving my skill set to stay ahead in the rapidly evolving tech landscape. Whether it’s building dynamic web applications, designing sleek mobile interfaces, or optimizing user experiences, I am dedicated to delivering excellence in every project I undertake
+        
+       
+    <!-- Skills Section -->
+    <div class="skills">
+        <h3>My Skills</h3>
+        <div class="skills-list">
+            <div class="skill"><i class='bx bxl-html5'></i><p>HTML5</p></div>
+            <div class="skill"><i class='bx bxl-css3'></i><p>CSS3</p></div>
+            <div class="skill"><i class='bx bxl-javascript'></i><p>JavaScript</p></div>
+            <div class="skill"><i class='bx bxl-react'></i><p>React</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="last-text">
+    <p>Developed With Love By Joseph Wambugu &copy; 2025</p>
+</div>
+
+<button class="top"><i class='bx bx-up-arrow-alt'></i></button>
+</body>
+</html>
