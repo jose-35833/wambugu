@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts | Weza Bank</title>
+    <link rel="shortcut icon" href="bank1.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            background-image: url(bank2.jpg); 
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        header {
+            background-color: #004d99;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        nav .links {
+            display: flex;
+            list-style: none;
+        }
+
+        nav .links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+
+        nav .links a.active {
+            color: #ffcc00; /* Change color for active link */
+        }
+
+        .wrapper {
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .account-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .account-card p {
+            font-size: 16px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .account-card button {
+            background-color: #004d99;
+            color: white;
+            padding: 10px;
+            font-weight: 600;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .transactions li, .savings-info, .loan-info {
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 5px solid #004d99;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .links {
+                display: none; /* Hide the original links on small screens */
+            }
+            .links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        footer {
+            text-align: center;
+            background: #004d99;
+            color: white;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Prevent Right Click
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            });
+
+            // Prevent Certain Key Combinations
+            document.addEventListener("keydown", function (e) {
+                if (e.ctrlKey && ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase())) {
+                    e.preventDefault();
+                }
+            });
+
+            // Show 'Back to Top' Button
+            window.onscroll = function () {
+                var topButton = document.querySelector('.top');
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    topButton.style.display = "block";
+                } else {
+                    topButton.style.display = "none";
+                }
+            }});
+    </script>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">Weza Bank</div>
+        <div class="links">
+            <a href="index.html"><i class='bx bx-home'></i> Home</a>
+            <a href="services.html"><i class='bx bx-briefcase'></i> Services</a>
+            <a href="accounts.html" class="active"><i class='bx bx-user'></i> Accounts</a>
+            <a href="contact.html"><i class='bx bx-envelope'></i> Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="wrapper">
+        <h2>Your Account</h2>
+        <div class="account-card">
+            <h3>Balance: KES <span id="balance">5000</span></h3>
+            <p id="balanceMessage">Your available balance is KES 5000</p>
+            <button id="transferFundsBtn">Transfer Funds</button>
+            <button id="viewTransactionsBtn">View Transactions</button>
+            <button id="loanBtn">Request Loan</button>
+            <button id="savingsBtn">Start Saving</button>
+        </div>
+
+        <!-- Transfer Section -->
+        <div id="transferSection" class="hidden">
+            <h3>Transfer Funds</h3>
+            <input type="text" id="recipient" placeholder="Recipient Account Number or Phone Number">
+            <input type="number" id="transferAmount" placeholder="Enter amount">
+            <button id="confirmTransfer">Send</button>
+        </div>
+
+        <!-- Transactions History -->
+        <div id="transactionsSection" class="hidden">
+            <h3>Transaction History</h3>
+            <ul id="transactionsList"></ul>
+        </div>
+
+        <!-- Loan Section -->
+        <div id="loanSection" class="hidden">
+            <h3>Loan Request</h3>
+            <input type="number" id="loanAmount" placeholder="Enter loan amount">
+            <select id="loanPurpose">
+                <option value="business">Business</option>
+                <option value="education">Education</option>
+                <option value="medical">Medical</option>
+            </select>
+            <select id="repaymentPeriod">
+                <option value="3">3 months</option>
+                <option value="6">6 months</option>
+            </select>
+            <button id="requestLoan">Apply</button>
+            <p class="loan-info" id="loanStatus"></p>
+        </div>
+
+        <!-- Savings Section -->
+        <div id="savingsSection" class="hidden">
+            <h3>Start Saving</h3>
+            <input type="number" id="savingAmount" placeholder="Enter saving amount">
+            <button id="confirmSaving">Save</button>
+            <p class="savings-info" id="savingsStatus"></p>
+        </div>
+    </div>
+</main>
+
+<script>
+    let balance = 5000;
+    let transactions = [];
+    let savings = 0;
+    let loanAmount = 0;
+    let accountAgeMonths = 4;
+
+   document.getElementById("transferFundsBtn").addEventListener("click", () => {
+        document.getElementById("transferSection").classList.toggle("hidden");
+    });
+
+    document.getElementById("confirmTransfer").addEventListener("click", () => {
+        let amount = parseFloat(document.getElementById("transferAmount").value);
+        let recipient = document.getElementById("recipient").value.trim();
+
+        if (isNaN(amount) || amount <= 0) {
+            alert("Enter a valid amount!");
+            return;
+        }
+
+        if (!recipient.match(/^\d{6}$/) && !recipient.match(/^\d{10}$/)) {
+            alert("Enter a valid 6-digit account number or 10-digit phone number!");
+            return;
+        }
+
+        if (amount > balance) {
+            alert("Insufficient funds!");
+            return;
+        }
+
+        balance -= amount;
+        document.getElementById("balance").innerText = balance;
+        transactions.push(`Sent KES ${amount} to ${recipient}`);
+        alert("Transfer successful!");
+    });
+
+    document.getElementById("requestLoan").addEventListener("click", () => {
+        if (accountAgeMonths < 3 || loanAmount > 0) {
+            alert("Loan not available!");
+            return;
+        }
+
+        loanAmount = parseFloat(document.getElementById("loanAmount").value);
+        balance += loanAmount;
+        document.getElementById("balance").innerText = balance;
+        document.getElementById("loanStatus").innerText = `Loan Approved: KES ${loanAmount}`;
+    });
+
+    function displayTransactions() {
+        document.getElementById("transactionsList").innerHTML = transactions.map(t => `<li>${t}</li>`).join('');
+    }
+</script>
+
+        <footer>
+            <p>&copy; 2025 Your Bank. All rights reserved.</p>
+            <p>Contact: wezabank@gmail.com | +254 702 729 526</p>
+        </footer>
+</body>
+</html>

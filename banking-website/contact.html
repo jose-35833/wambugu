@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System - Contact Us</title>
+    <link rel="shortcut icon" href="bank1.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            background-image: url(bank2.jpg); 
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        
+        h2 {
+            color: white;
+        }
+
+        header {
+            background-color: #004d99;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        nav .links {
+            display: flex;
+            list-style: none;
+        }
+
+        nav .links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+
+        nav .links a.active {
+            color: #ffcc00; /* Change color for active link */
+        }
+
+        footer {
+            text-align: center;
+            background: #004d99;
+            color: white;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 20px;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-list i {
+            font-size: 24px;
+            color: #004080;
+            margin-right: 15px;
+        }
+
+    </style>
+    <script >
+        document.addEventListener("DOMContentLoaded", function () {
+            // Prevent Right Click
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            });
+
+            // Prevent Certain Key Combinations
+            document.addEventListener("keydown", function (e) {
+                if (e.ctrlKey && ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase())) {
+                    e.preventDefault();
+                }
+            });
+
+            // Show 'Back to Top' Button
+            window.onscroll = function () {
+                var topButton = document.querySelector('.top');
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    topButton.style.display = "block";
+                } else {
+                    topButton.style.display = "none";
+                }
+            }});
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Weza Bank</div>
+            <div class="links">
+                <a href="index.html"><i class='bx bx-home'></i> Home</a>
+                <a href="services.html"><i class='bx bx-briefcase'></i> Services</a>
+                <a href="accounts.html"><i class='bx bx-user'></i> Accounts</a>
+                <a href="contact.html" class="active"><i class='bx bx-envelope'></i> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <ul class="contact-list">
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+254 702 729 526</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>wezabank@gmail.com</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Nairobi, Kenya</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Bank. All rights reserved.</p>
+        <p>Contact: wezabank@gmail.com | +254 702 729 526</p>
+    </footer>
+
+</body>
+</html>

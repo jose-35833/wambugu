@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="bank1.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <style>
+        nav .links a {
+            color: white; /* Change link color to white */
+            text-decoration: none; /* Remove text decoration */
+            margin: 0 15px; /* Add spacing between links */
+        }
+
+        nav .links ul li a:hover {
+            color: #ffcc00;
+        }
+
+        nav .links a.active {
+            color: #ffcc00; /* Change color for active link */
+        }
+    </style>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Prevent Right Click
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
+        // Prevent Certain Key Combinations
+        document.addEventListener("keydown", function (e) {
+            if (e.ctrlKey && ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase())) {
+                e.preventDefault();
+            }
+        });
+
+        // Show 'Back to Top' Button
+        window.onscroll = function () {
+            var topButton = document.querySelector('.top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }});
+</script>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Weza Bank</div>
+            <div class="links">
+                <a href="index.html" class="active"><i class='bx bx-home'></i> Home</a>
+                <a href="services.html"><i class='bx bx-briefcase'></i> Services</a>
+            <a href="accounts.html" ><i class='bx bx-user'></i> Accounts</a>
+
+                <a href="contact.html"><i class='bx bx-envelope'></i> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Registration Form -->
+    <main>
+        <p class="p">Welcome to Weza Bank. Click the Create Account button to create your bank account with us.</p>
+
+        <button id="createAccountBtn" style="position: absolute; top: 15px; right: 15px; width: 150px; background-color: #ffcc00; color: #333; border: none; padding: 10px; font-size: 1rem; cursor: pointer; font-weight: 600; border-radius: 5px;">Create Account</button>
+
+        <div class="wrapper" id="formWrapper" style="display: none;">
+            <span class="icon-close" id="closeForm"><i class="fa-solid fa-xmark"></i></span>
+            <div class="form-box register">
+                <h2>Create Account</h2>
+                <form id="registerForm">
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <input type="text" id="username" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="email" id="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" id="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" id="confirmPassword" required>
+                        <label>Confirm Password</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-money-bill"></i></span>
+                        <input type="number" id="initialDeposit" required>
+                        <label>Initial Deposit (KES)</label>
+                    </div>
+                    <button type="submit" id="registerBtnSubmit">Register</button>
+                    <p>Already have an account? <a href="#" id="showLoginForm">Login</a></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="wrapper" id="loginWrapper" style="display: none;">
+            <span class="icon-close" id="closeLogin"><i class="fa-solid fa-xmark"></i></span>
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-user"></i></span>
+                        <input type="text" id="loginUsername" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                        <input type="password" id="loginPassword" required>
+                        <label>Password</label>
+                    </div>
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <a href="#" id="showRegisterForm">Register</a></p>
+                    <p id="loginMessage"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Banking Services -->
+        <div class="wrapper" id="bankingWrapper" style="display: none;">
+            <h2>Welcome, <span id="userDisplay"></span></h2>
+            <p>Your Balance: KES <span id="balanceDisplay">0</span></p>
+            <div class="input-box">
+                <input type="number" id="amount" placeholder="Enter amount">
+            </div>
+            <button id="depositBtn">Deposit</button>
+            <button id="withdrawBtn">Withdraw</button>
+            <button id="checkBalance">Check Balance</button>
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Your Bank. All rights reserved.</p>
+        <p>Contact: wezabank@gmail.com | +254 702 729 526</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
