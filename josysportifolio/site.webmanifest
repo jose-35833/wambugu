@@ -1,0 +1,22 @@
+{
+    "name": "Joseph Wambugu — Full Stack Developer",
+    "short_name": "JW Portfolio",
+    "description": "Full Stack Developer specializing in web, UI/UX, and app development.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0e1a",
+    "theme_color": "#0a0e1a",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "p5.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "p5.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ]
+}

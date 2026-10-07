@@ -1,326 +1,602 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    
+    <title>Joseph Wambugu | Full Stack Developer, Designer & Trainer</title>
+    <meta name="description" content="Joseph Wambugu — Full Stack Developer, UI/UX Designer, and Trainer based in Kenya. Web development, mobile apps, design, and 1-on-1 training.">
+    <meta name="keywords" content="Joseph Wambugu, web developer Kenya, UI/UX designer, app developer, coding tutor, courses, React, JavaScript">
+    <meta name="author" content="Joseph Wambugu">
+    <meta name="theme-color" content="#0a0e1a">
+    <link rel="canonical" href="https://wambugu-three.vercel.app/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Joseph Wambugu | Full Stack Developer & Trainer">
+    <meta property="og:description" content="Web development, UI/UX design, mobile apps, and personalized training.">
+    <meta property="og:image" content="portfolio.png">
+    <meta property="og:url" content="https://wambugu-three.vercel.app/">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Joseph Wambugu | Full Stack Developer & Trainer">
+    <meta name="twitter:description" content="Web development, UI/UX design, mobile apps, and personalized training.">
+    <meta name="twitter:image" content="portfolio.png">
+    
+    <link rel="shortcut icon" href="p5.jpg">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="p5.jpg">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <script>
+        window.addEventListener('load', () => {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+            script.onload = () => {
+                if (window.emailjs) {
+                    emailjs.init({ publicKey: "389kaNhM06CA9HZH8" });
+                }
+            };
+            document.head.appendChild(script);
+        });
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1JLFVJFWP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K1JLFVJFWP');
+    </script>
+    
     <script type="text/javascript">
-    (function(){
-      emailjs.init({
-        publicKey: "389kaNhM06CA9HZH8",
-      });
-    })();
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6ac62e80f7849b34c2f7cdac/1k4b2bagf';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
     </script>
 </head>
 <body>
 
-    <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-    
-        <!-- Mobile Menu Toggle Button -->
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    
-        <nav class="navbar" id="navbar">
-            <a href="index.html" class="active">Home</a>
-            <a href="index.html#about">About</a>
-    
-            <!-- Dropdown Menu -->
-            <div class="dropdown">
-                <a href="#" class="dropbtn" onclick="toggleDropdown(event)">Services ▼</a>
-                <div class="dropdown-content">
-                    <a href="webdesign.html">Web Development</a>
-                    <a href="uiux.html">UI/UX Design</a>
-                    <a href="app.html">App Design</a>
-                </div>
-            </div>
-    
-            <a href="index.html#skills">Skills</a>
-            <a href="index.html#project">Portfolio</a>
-            <a href="index.html#contact">Contact</a>
-        </nav>
-    </header>
-    
-    <script>
-        function toggleMenu() {
-            document.getElementById("navbar").classList.toggle("active");
-        }
-    
-        function toggleDropdown(event) {
-            event.preventDefault();
-            event.target.closest(".dropdown").classList.toggle("active");
-        }
-    </script>
-    
-
-    <section class="home">
-        <div class="home-container">
-            <div class="home-content">
-                <h3>Hello, It's Me</h3>
-                <h1>Josy</h1>
-                <h3>And I'm a <span class="text" style="color: cyan; font-size:29px;"></span></h3>
-                <p>I'm a web designer with extensive experience of 2 year.
-                    <br>Expertise includes website design, Frontend, and Backend, and much more...</p>
-                <div class="home-sci">
-                    <a href="https://www.facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
-                    <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram' ></i></a>
-                    <a href="https://www.whatsapp.com" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-                    <a href="https://www.tiktok.com" target="_blank"><i class='bx bxl-tiktok' ></i></a>
-                </div>
-                <a href="#about" class="btn-box">More About Me</a>
-            </div>
-            <div class="home-imghover">
-                <img src="josee_prev_ui.png" alt="Josy Image" width="400">
-            </div>
-        </div>
-    </section>
-    
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="josee_prev_ui.png" alt="" width="400">
-        </div>
-        <div class="about-text">
-            <h2>About <span>Me</span></h2>
-            <h4>Full Stack Developer</h4>
-            <p>I'm a passionate web developer, with 1 year experience, specializing in creating high-performance, user-friendly websites and applications. 
-                With expertise in front-end and back-end development, I build scalable solutions that enhance user experience and
-                drive business growth. I focus on clean code, modern frameworks, and responsive design to deliver top-tier results.
-                Let’s bring your ideas to life!</p>
-            <a href="more.html" class="btn-box">More About Me</a>
-        </div>
-    </section>
-
-    <section>
-        <div class="services" id="services">
-            <div class="container">
-                <div class="sub-title">
-                    <h1 class="sub-title">My <span>Services</span></h1>
-                    <div class="services-list">
-                        <div>
-                            <i class='bx bx-code' style='color:#00eeff'></i>
-                            <h2>Web Development</h2>
-                            <p>With 1 year of experience as a web designer, 
-                               I specialize in crafting responsive, visually appealing, 
-                               and user-friendly websites. 
-                               My expertise includes UI/UX design, front-end development, 
-                               and optimizing website performance to enhance user engagement 
-                               and functionality, ensuring 
-                                professional and innovative web solutions for clients.</p>
-                            <a href="webdesign.html" class="read">learn more</a>
-                        </div>
-                        <div>
-                            <i class='bx bx-crop' style='color:#00eeff'></i>
-                            <h2>UI/UX Design</h2>
-                            <p>I am a UI/UX designer with 1 year of experience, 
-                                specializing in creating intuitive, user-centered designs. 
-                                My expertise includes wireframing, prototyping, and front-end design, 
-                                ensuring seamless digital experiences that balance aesthetics, 
-                                functionality, and user satisfaction.</p>
-                            <a href="uiux.html" class="read">learn more</a>
-                        </div>
-                        <div>
-                            <i class='bx bxl-apple' style='color:#00eeff'></i>
-                            <h2>App Design</h2>
-                            <p>Passionate about crafting seamless digital experiences, 
-                                I am an app designer with 1 year of experience. 
-                                I specialize in intuitive UI/UX design, wireframing, prototyping, and interactive design, 
-                                ensuring user-friendly and visually appealing applications that enhance engagement and 
-                                functionality across various platforms.</p>
-                            <a href="app.html" class="read">learn more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <h1 class="sub-title" style="text-align:center;">My <span>Skills</span></h1>
-
-    <section>
-        <div class="container1" id="skills">
-            <h1 class="heading1">Technical Skills</h1>
-            <div class="Technical-bars">
-                <div class="bar"><i style="color: rgb(238, 116, 17)" class='bx bxl-html5'></i>
-                    <div class="info">
-                        <span>HTML</span>
-                    </div>
-                    <div class="progress-line html">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="bar"><i style="color: rgb(17, 87, 238)" class='bx bxl-css3'></i>
-                    <div class="info">
-                        <span>CSS</span>
-                    </div>
-                    <div class="progress-line css">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="bar"><i style="color: rgb(223, 238, 17)" class='bx bxl-javascript'></i>
-                    <div class="info">
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="progress-line JavaScript">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="bar"><i style="color: rgb(238, 17, 201)" class='bx bxl-python'></i>
-                    <div class="info">
-                        <span>Python</span>
-                    </div>
-                    <div class="progress-line python">
-                        <span></span>
-                    </div>
-                </div>
-                <div class="bar"><i style="color: rgb(17, 186, 238)" class='bx bxl-react'></i>
-                    <div class="info">
-                        <span>React</span>
-                    </div>
-                    <div class="progress-line react">
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container1">
-            <h1 class="heading1">Professional Skills</h1>
-            <div class="radial-bars">
-                <div class="radial-bar">
-                    <svg x="0px" y="0px" viewBox="0 0 200 200">
-                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
-                    </svg>
-                    <div class="percentage">90%</div>
-                    <div class="text">Creativity</div>
-                </div>
-                <div class="radial-bar">
-                    <svg x="0px" y="0px" viewBox="0 0 200 200">
-                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
-                    </svg>
-                    <div class="percentage">65%</div>
-                    <div class="text">Communication</div>
-                </div>
-                <div class="radial-bar">
-                    <svg x="0px" y="0px" viewBox="0 0 200 200">
-                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
-                    </svg>
-                    <div class="percentage">75%</div>
-                    <div class="text">Problem Solving</div>
-                </div>
-                <div class="radial-bar">
-                    <svg x="0px" y="0px" viewBox="0 0 200 200">
-                        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
-                        <circle class="path path-1" cx="100" cy="100" r="80"></circle>
-                    </svg>
-                    <div class="percentage">85%</div>
-                    <div class="text">Teamwork</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="portfolio" id="project">
-            <div class="main-text" id="project">
-                <h2>Latest <span>Project</span></h2>
-                <div class="portfolio-content">
-                    <div class="row">
-                        <img src="bank.png" alt="latest project">
-                        <div class="layer">
-                            <h5>Web Design</h5>
-                            <p>A modern banking interface designed for seamless transactions and user-friendly navigation.</p>
-                            <a href="BANKING WEBSITE/index.html" target="_blank"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <img src="contactform.png" alt="latest project">
-                        <div class="layer">
-                            <h5>Web Design</h5>
-                            <p>A sleek and intuitive contact form designed for easy user communication.</p>
-                            <a href="contactjs/index.html" target="_blank"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <img src="calendar.png" alt="latest project">
-                        <div class="layer">
-                            <h5>Web Design</h5>
-                            <p>An interactive calendar interface for scheduling and managing events efficiently.</p>
-                            <a href="calendar/index.html" target="_blank"><i class='bx bx-link-external' style="color: aliceblue;"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact2" id="contact">
-        <div class="contact-text">
-            <h2>Contact <span>Me</span></h2>
-            <h4>Let's Work Together</h4>
-        </div>
-        
-        <div class="container2">
-            <div class="contact-info">
-                <h1>Hi there!</h1>
-                <p>
-                    Need to get in touch? Use the contact form to send us a message. Simply enter your <strong>Name</strong>, 
-                    <strong>Email</strong>, and your <strong>Message</strong>, and we’ll get back to you as soon as possible.
-                </p>
-                <p>📩 Email: [Your Email]</p>
-                <p>🏷️ Name: [Your Name]</p>
-                <p>✉️ Message: [Your Message]</p>
-                <h3>Contact Us</h3>
-                <div class="contact-list">
-                    <li style="color:white"><i class='bx bx-mail-send'></i><a href="mailto:wambugujosephgitimu@gmail.com" style="color:white">wambugujosephgitimu@gmail.com</a></li>
-                    <li><i class='bx bx-phone'></i> <a href="tel:+254702729526" style="color:white">call me: 0702729526 </a> </li>
-                </div>
-                
-                <p>We look forward to hearing from you!</p>
-                <div class="contact-icons">
-                    <a href="https://www.facebeek.com" target="_blank"><i class='bx bxl-facebook'></i></a>
-                    <a href="https://www.twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a>
-                    <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
-                    <a href="https://www.linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                </div>
-            </div>
-            <div class="contact-form">
-                <h1>Contact form</h1>
-                <div class="form-group">
-                    <h5 for="name">Name</h5>
-                    <input type="text" id="name" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <h5 for="email">Email</h5>
-                    <input type="email" id="email" placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <h5 for="message">Message</h5>
-                    <textarea id="message" rows="3" placeholder="Enter your message"></textarea>
-                </div>
-                <button class="btn-submit" onclick="sendMail()">Submit</button>
-            </div>
-        </div>
-    </section>
-
-    <div class="last-text">
-        <p>Developed With Love By Joseph Wambugu &copy;2024</p>
-        <a href="#" class="top"><i class='bx bx-up-arrow-alt bx-fade-down' ></i></a>
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="loader"></div>
     </div>
 
-    <script src="script.js"></script>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <a href="index.html" class="logo" aria-label="Portfolio Home">Portfolio</a>
+        
+        <nav class="navbar" id="primary-navigation" aria-label="Main navigation">
+            <a href="index.html" data-page="home">Home</a>
+            <a href="index.html#about" data-page="about">About</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" data-page="services">
+                    Services <i class='bx bx-chevron-down'></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="webdesign.html" data-page="webdesign">Web Development</a>
+                    <a href="uiux.html" data-page="uiux">UI/UX Design</a>
+                    <a href="app.html" data-page="app">App Design</a>
+                    <a href="courses.html" data-page="courses">Courses & Training</a>
+                </div>
+            </div>
+            <a href="courses.html" data-page="courses">Courses</a>
+            <a href="index.html#project" data-page="portfolio">Portfolio</a>
+            <a href="index.html#blog" data-page="blog">Blog</a>
+            <a href="hire.html" data-page="hire">Hire Me</a>
+        </nav>
+        
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class='bx bx-sun'></i>
+            </button>
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="home" id="home">
+            <div class="home-container">
+                <div class="home-content">
+                    <span class="greeting">Hello, I'm</span>
+                    <h1>Joseph Wambugu</h1>
+                    <div class="role">
+                        I'm a <span class="text"></span>
+                    </div>
+                    <p>
+                        Full Stack Developer, UI/UX Designer, and Trainer based in Kenya. 
+                        I build fast, modern websites and mobile apps — and teach others 
+                        how to do the same.
+                    </p>
+                    <div class="home-sci">
+                        <a href="https://www.facebook.com/profile.php?id=100088265375373" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="https://wa.me/254786964081" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <i class='bx bxl-whatsapp'></i>
+                        </a>
+                        <a href="https://vm.tiktok.com/ZS9D4bNJ7gYmy-Sykir/" target="_blank" rel="noopener" aria-label="TikTok">
+                            <i class='bx bxl-tiktok'></i>
+                        </a>
+                    </div>
+                    <div class="home-cta-group">
+                        <a href="hire.html" class="btn-box"><span>Hire Me</span></a>
+                        <a href="courses.html" class="read">View Courses <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+                <div class="home-image-wrap">
+                    <div class="home-image-frame">
+                        <img src="portfolio.png" alt="Joseph Wambugu" width="400" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about" id="about">
+            <div class="about-img">
+                <img src="portfolio.png" alt="Joseph Wambugu" width="380" height="380" loading="lazy">
+            </div>
+            <div class="about-text">
+                <h2>About <span>Me</span></h2>
+                <h4>Developer · Designer · Trainer</h4>
+                <p>
+                    I'm a passionate Full Stack Developer with 3+ years of experience building 
+                    high-performance websites, intuitive interfaces, and scalable mobile apps. 
+                    I also train individuals and teams in web development, UI/UX design, and 
+                    app development — because knowledge grows when shared.
+                </p>
+                <p>
+                    My work blends clean code, modern design, and real-world usability. Whether 
+                    you're hiring me for a project or enrolling in one of my courses, you get 
+                    the same commitment: quality, clarity, and results.
+                </p>
+                <div class="about-cta-group">
+                    <a href="more.html" class="btn-box"><span>Full Bio</span></a>
+                    <a href="hire.html" class="read">Hire Me <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section>
+            <div class="services" id="services">
+                <h1 class="sub-title">What I <span>Do</span></h1>
+                <p class="section-subtitle">
+                    Four ways I can help you — as a developer, designer, and trainer
+                </p>
+                
+                <div class="services-list services-list-four">
+                    <div class="service-card">
+                        <i class='bx bx-code-alt'></i>
+                        <h2>Web Development</h2>
+                        <p>
+                            Responsive, fast, and SEO-friendly websites built with modern 
+                            technologies — from landing pages to full web apps.
+                        </p>
+                        <a href="webdesign.html" class="read">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class='bx bx-palette'></i>
+                        <h2>UI/UX Design</h2>
+                        <p>
+                            User-centered interfaces with wireframes, prototypes, and design 
+                            systems that make digital products feel effortless.
+                        </p>
+                        <a href="uiux.html" class="read">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class='bx bxl-apple'></i>
+                        <h2>App Development</h2>
+                        <p>
+                            Cross-platform mobile apps for iOS and Android — built with React 
+                            Native and Flutter, ready for the app stores.
+                        </p>
+                        <a href="app.html" class="read">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                    <div class="service-card">
+                        <i class='bx bx-book-reader'></i>
+                        <h2>Courses & Training</h2>
+                        <p>
+                            Personalized 1-on-1 training in web, UI/UX, and app development. 
+                            Learn by building real projects — not just watching tutorials.
+                        </p>
+                        <a href="courses.html" class="read">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <div class="skills-header">
+            <h1 class="sub-title">My <span>Skills</span></h1>
+            <p class="section-subtitle">Technologies and tools I use to bring ideas to life</p>
+        </div>
+
+        <section id="skills">
+            <div class="container1">
+                <h1 class="heading1">Technical Skills</h1>
+                <div class="Technical-bars">
+                    <div class="bar">
+                        <i style="color: #e34f26;" class='bx bxl-html5'></i>
+                        <div class="info"><span>HTML5</span></div>
+                        <div class="progress-line html"><span></span></div>
+                    </div>
+                    <div class="bar">
+                        <i style="color: #1572b6;" class='bx bxl-css3'></i>
+                        <div class="info"><span>CSS3</span></div>
+                        <div class="progress-line css"><span></span></div>
+                    </div>
+                    <div class="bar">
+                        <i style="color: #f7df1e;" class='bx bxl-javascript'></i>
+                        <div class="info"><span>JavaScript</span></div>
+                        <div class="progress-line JavaScript"><span></span></div>
+                    </div>
+                    <div class="bar">
+                        <i style="color: #3776ab;" class='bx bxl-python'></i>
+                        <div class="info"><span>Python</span></div>
+                        <div class="progress-line python"><span></span></div>
+                    </div>
+                    <div class="bar">
+                        <i style="color: #61dafb;" class='bx bxl-react'></i>
+                        <div class="info"><span>React</span></div>
+                        <div class="progress-line react"><span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container1">
+                <h1 class="heading1">Professional Skills</h1>
+                <div class="radial-bars">
+                    <div class="radial-bar">
+                        <div class="radial-svg-wrap">
+                            <svg viewBox="0 0 200 200" aria-hidden="true">
+                                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                                <circle class="path" cx="100" cy="100" r="80"></circle>
+                            </svg>
+                            <div class="percentage">90%</div>
+                        </div>
+                        <div class="text">Creativity</div>
+                    </div>
+                    <div class="radial-bar">
+                        <div class="radial-svg-wrap">
+                            <svg viewBox="0 0 200 200" aria-hidden="true">
+                                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                                <circle class="path" cx="100" cy="100" r="80"></circle>
+                            </svg>
+                            <div class="percentage">85%</div>
+                        </div>
+                        <div class="text">Communication</div>
+                    </div>
+                    <div class="radial-bar">
+                        <div class="radial-svg-wrap">
+                            <svg viewBox="0 0 200 200" aria-hidden="true">
+                                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                                <circle class="path" cx="100" cy="100" r="80"></circle>
+                            </svg>
+                            <div class="percentage">80%</div>
+                        </div>
+                        <div class="text">Problem Solving</div>
+                    </div>
+                    <div class="radial-bar">
+                        <div class="radial-svg-wrap">
+                            <svg viewBox="0 0 200 200" aria-hidden="true">
+                                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                                <circle class="path" cx="100" cy="100" r="80"></circle>
+                            </svg>
+                            <div class="percentage">92%</div>
+                        </div>
+                        <div class="text">Teamwork</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section>
+            <div class="portfolio" id="project">
+                <h2 class="sub-title">Latest <span>Projects</span></h2>
+                <p class="section-subtitle">A selection of my recent work</p>
+                
+                <div class="portfolio-content">
+                    <div class="row">
+                        <img src="bank.png" alt="Banking Website Project" loading="lazy" width="600" height="400">
+                        <div class="layer">
+                            <h5>Banking Website</h5>
+                            <p>A modern banking interface designed for seamless transactions.</p>
+                            <a href="banking-website/index.html" target="_blank" rel="noopener" aria-label="View Banking Website project">
+                                <i class='bx bx-link-external'></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="contactform.png" alt="Contact Form Project" loading="lazy" width="600" height="400">
+                        <div class="layer">
+                            <h5>Contact Form</h5>
+                            <p>A sleek and intuitive contact form designed for easy communication.</p>
+                            <a href="contactjs/index.html" target="_blank" rel="noopener" aria-label="View Contact Form project">
+                                <i class='bx bx-link-external'></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <img src="calendar.png" alt="Calendar Project" loading="lazy" width="600" height="400">
+                        <div class="layer">
+                            <h5>Calendar App</h5>
+                            <p>An interactive calendar interface for scheduling events efficiently.</p>
+                            <a href="calendar/index.html" target="_blank" rel="noopener" aria-label="View Calendar project">
+                                <i class='bx bx-link-external'></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Preview -->
+        <section class="courses-preview">
+            <h2 class="sub-title">Learn With <span>Me</span></h2>
+            <p class="section-subtitle">
+                Personalized 1-on-1 training in web, UI/UX, and app development — 
+                priced in your currency
+            </p>
+            
+            <div class="courses-preview-grid">
+                <div class="courses-preview-card">
+                    <i class='bx bx-code-alt'></i>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React — from zero to deployed websites.</p>
+                    <span class="courses-preview-price">From <strong>KSh 15,000</strong></span>
+                </div>
+                <div class="courses-preview-card">
+                    <i class='bx bx-palette'></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Figma, wireframing, prototyping, design systems — the full toolkit.</p>
+                    <span class="courses-preview-price">From <strong>KSh 15,000</strong></span>
+                </div>
+                <div class="courses-preview-card">
+                    <i class='bx bxl-apple'></i>
+                    <h3>App Development</h3>
+                    <p>React Native — build iOS and Android apps with one codebase.</p>
+                    <span class="courses-preview-price">From <strong>KSh 20,000</strong></span>
+                </div>
+            </div>
+
+            <div class="courses-preview-cta">
+                <a href="courses.html" class="btn-box"><span>View All Courses & Pricing</span></a>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2 class="sub-title">What Clients <span>Say</span></h2>
+            <p class="section-subtitle">Feedback from people I've worked with</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <i class='bx bxs-quote-alt-left'></i>
+                    <p>
+                        "Joseph delivered our banking website ahead of schedule. The account 
+                        creation flow is smooth, the dashboard is clean, and our customers 
+                        love how easy it is to navigate."
+                    </p>
+                    <div class="client-info">
+                        <strong>Client — Banking Website</strong>
+                        <span>Fintech Startup, Nairobi</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class='bx bxs-quote-alt-left'></i>
+                    <p>
+                        "The contact form Joseph built for us just works. Clean code, easy 
+                        to integrate with our backend, and the user experience is spot on. 
+                        Highly recommended."
+                    </p>
+                    <div class="client-info">
+                        <strong>Client — Contact Form</strong>
+                        <span>Small Business Owner</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class='bx bxs-quote-alt-left'></i>
+                    <p>
+                        "Joseph's calendar app replaced three tools we were juggling. 
+                        Intuitive interface, reliable scheduling, and the design matches 
+                        our brand perfectly."
+                    </p>
+                    <div class="client-info">
+                        <strong>Client — Calendar App</strong>
+                        <span>Consulting Firm</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog -->
+        <section id="blog">
+            <h2 class="sub-title">Latest <span>Articles</span></h2>
+            <p class="section-subtitle">Thoughts on web development, design, and tech</p>
+            
+            <div class="blog-grid">
+                <a href="blog/post-1.html" class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="post1.jpg" alt="Building Fast, Modern Websites in 2025" loading="lazy" width="600" height="340">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="category">Web Dev</span>
+                            <span>·</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3>Building Fast, Modern Websites in 2025</h3>
+                        <p>Practical tips for building performant, accessible, and beautiful websites with vanilla JavaScript and modern CSS.</p>
+                        <span class="read-more">Read Article <i class='bx bx-right-arrow-alt'></i></span>
+                    </div>
+                </a>
+                <a href="blog/post-2.html" class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="post2.jpg" alt="Design Principles That Actually Improve UX" loading="lazy" width="600" height="340">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="category">UI/UX</span>
+                            <span>·</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3>Design Principles That Actually Improve UX</h3>
+                        <p>Lessons learned from three years of designing interfaces users actually enjoy using.</p>
+                        <span class="read-more">Read Article <i class='bx bx-right-arrow-alt'></i></span>
+                    </div>
+                </a>
+                <a href="blog/post-3.html" class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="post3.jpg" alt="React Native vs Flutter: A Practical Comparison" loading="lazy" width="600" height="340">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-meta">
+                            <span class="category">App Dev</span>
+                            <span>·</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3>React Native vs Flutter: A Practical Comparison</h3>
+                        <p>Which framework should you pick for your next mobile app project? Here's my honest take.</p>
+                        <span class="read-more">Read Article <i class='bx bx-right-arrow-alt'></i></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact2" id="contact">
+            <div class="contact-text">
+                <h2>Get In <span>Touch</span></h2>
+                <h4>Hire me, ask a question, or send a quick message</h4>
+            </div>
+
+            <!-- Quick contact chips (phone hidden behind a click) -->
+            <div class="quick-contact">
+                <a class="quick-contact-btn" href="https://wa.me/254786964081?text=Hi%20Joseph%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener">
+                    <i class='bx bxl-whatsapp'></i>
+                    <span>WhatsApp</span>
+                </a>
+                <button class="quick-contact-btn" type="button" onclick="openHireModal('Quick Contact')">
+                    <i class='bx bx-phone'></i>
+                    <span>Call</span>
+                </button>
+                <a class="quick-contact-btn" href="mailto:wambugujosephgitimu@gmail.com">
+                    <i class='bx bx-envelope'></i>
+                    <span>Email</span>
+                </a>
+            </div>
+
+            <!-- Collapsible Contact Form -->
+            <div class="collapsible-form">
+                <button class="collapsible-toggle" type="button" onclick="toggleContactForm()" aria-expanded="false" aria-controls="contactFormPanel">
+                    <span>
+                        <i class='bx bx-message-square-dots'></i>
+                        Send a Detailed Message
+                    </span>
+                    <i class='bx bx-chevron-down collapsible-arrow'></i>
+                </button>
+
+                <div class="collapsible-content" id="contactFormPanel" hidden>
+                    <div class="contact-form-wrap">
+                        <form class="contact-form" onsubmit="event.preventDefault(); sendMail();" novalidate>
+                            
+                            <div class="honeypot" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" placeholder="Your name" autocomplete="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="5" placeholder="Tell me about your project or question..." required></textarea>
+                            </div>
+
+                            <button class="btn-submit" type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="last-text">
+        <p>Developed with ❤️ by Joseph Wambugu &copy; 2024</p>
+        <button class="top" aria-label="Back to top">
+            <i class='bx bx-up-arrow-alt'></i>
+        </button>
+    </div>
+
+    <!-- Hire Modal -->
+    <div class="hire-modal-overlay" id="hireModal" aria-hidden="true">
+        <div class="hire-modal" role="dialog" aria-modal="true" aria-labelledby="hireModalTitle">
+            <button class="hire-modal-close" onclick="closeHireModal()" aria-label="Close">
+                <i class='bx bx-x'></i>
+            </button>
+            <h3 id="hireModalTitle">Let's Talk</h3>
+            <p class="hire-modal-subtitle">
+                Choose how you'd like to reach me. I usually reply within a few hours.
+            </p>
+            <div class="hire-modal-options">
+                <a href="#" class="hire-option hire-option-whatsapp" data-contact="whatsapp">
+                    <i class='bx bxl-whatsapp'></i>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <span>Fastest response</span>
+                    </div>
+                </a>
+                <a href="#" class="hire-option hire-option-call" data-contact="call">
+                    <i class='bx bx-phone'></i>
+                    <div>
+                        <strong>Call</strong>
+                        <span>+254 786 964 081</span>
+                    </div>
+                </a>
+                <a href="#" class="hire-option hire-option-email" data-contact="email">
+                    <i class='bx bx-envelope'></i>
+                    <div>
+                        <strong>Email</strong>
+                        <span>wambugujosephgitimu@gmail.com</span>
+                    </div>
+                </a>
+            </div>
+            <p class="hire-modal-note">
+                <i class='bx bx-info-circle'></i>
+                <span id="hireModalContext">Project Inquiry</span>
+            </p>
+        </div>
+    </div>
+
 </body>
 </html>
-
-
-
-
-
-

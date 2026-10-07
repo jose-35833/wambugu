@@ -1,278 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI/UX Design</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>UI/UX Design Services | Joseph Wambugu</title>
+    <meta name="description" content="Expert UI/UX design services — creating intuitive, user-centered digital experiences that drive engagement.">
+    <meta name="author" content="Joseph Wambugu">
+    <meta name="theme-color" content="#0a0e1a">
+    <link rel="canonical" href="https://wambugu-three.vercel.app/uiux.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="UI/UX Design Services | Joseph Wambugu">
+    <meta property="og:description" content="Intuitive, user-centered digital experiences.">
+    <meta property="og:image" content="portfolio.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UI/UX Design Services | Joseph Wambugu">
+    <meta name="twitter:description" content="Intuitive, user-centered digital experiences.">
+    <meta name="twitter:image" content="portfolio.png">
+    
     <link rel="shortcut icon" href="p5.jpg">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            color: #ededed;
-            background: #081b29;
-            user-select: none;
-        }
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 10%;
-            background: #051129;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        .logo {
-            font-size: 25px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            cursor: default;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 30px;
-            color: #fff;
-            cursor: pointer;
-        }
-        .navbar {
-            display: flex;
-        }
-        .navbar a {
-            font-size: 20px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            margin-left: 35px;
-            transition: 0.3s;
-        }
-        .navbar a:hover {
-            color: #0ef;
-        }
-        .dropdown {
-            position: relative;
-        }
-        .dropbtn {
-            font-size: 20px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: #051129;
-            box-shadow: 0 0 10px rgba(0, 238, 255, 0.6);
-            min-width: 180px;
-            border-radius: 5px;
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: #fff;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        @media screen and (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            .navbar {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 10%;
-                background: #051129;
-                width: 200px;
-                text-align: center;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 238, 255, 0.6);
-            }
-            .navbar a {
-                margin: 10px 0;
-                display: block;
-            }
-            .navbar.active {
-                display: flex;
-            }
-        }
-        .container {
-            padding: 100px 10%;
-            text-align: center;
-            border: 2px solid #0ef;
-            box-shadow: 0px 0px 15px rgba(0, 238, 255, 0.6);
-            border-radius: 10px;
-            margin: 80px auto;
-            max-width: 800px;
-            background: rgba(5, 17, 41, 0.8);
-        }
-        .container h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        .container p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .last-text {
-            width: 100%;
-            text-align: center;
-            padding: 25px 0;
-            background: rgb(7, 85, 91);
-            margin-top: 70px;
-            font-weight: 300;
-        }
-        .top {
-            display: none;
-            position: fixed;
-            bottom: 2.1rem;
-            right: 2.1rem;
-            color: #000;
-            background: #0ef;
-            font-size: 20px;
-            padding: 10px;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        .top.show {
-            display: block;
-        }
-    </style>
+    <link rel="manifest" href="site.webmanifest">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1JLFVJFWP"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Prevent Right Click
-            document.addEventListener("contextmenu", function (e) {
-                e.preventDefault();
-            });
-
-            // Prevent Certain Key Combinations
-            document.addEventListener("keydown", function (e) {
-                if (e.ctrlKey && ["u", "c", "x", "s", "a"].includes(e.key.toLowerCase())) {
-                    e.preventDefault();
-                }
-            });
-
-            // Show 'Back to Top' Button
-            window.onscroll = function () {
-                var topButton = document.querySelector('.top');
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    topButton.style.display = "block";
-                } else {
-                    topButton.style.display = "none";
-                }
-            };
-
-            // Smooth Scroll Fix for Fragment Navigation
-            if (window.location.hash) {
-                let element = document.querySelector(window.location.hash);
-                if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                }
-            }
-        });
-
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K1JLFVJFWP');
+    </script>
+    
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6ac62e80f7849b34c2f7cdac/1k4b2bagf';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
     </script>
 </head>
 <body>
 
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="loader"></div>
+    </div>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="header">
-        <a href="#" class="logo">Portfolio</a>
-        <div class="menu-toggle" onclick="toggleMenu()"><i class='bx bx-menu'></i></div>
-        <nav class="navbar">
-            <a href="index.html" class="active">Home</a>
-            <a href="index.html#about">About</a>
+        <a href="index.html" class="logo">Portfolio</a>
+        
+        <nav class="navbar" id="primary-navigation" aria-label="Main navigation">
+            <a href="index.html" data-page="home">Home</a>
+            <a href="index.html#about" data-page="about">About</a>
             <div class="dropdown">
-                <a href="#services" class="dropbtn">Services ▼</a>
+                <a href="#" class="dropbtn" data-page="services">
+                    Services <i class='bx bx-chevron-down'></i>
+                </a>
                 <div class="dropdown-content">
-                    <a href="webdesign.html">Web Development</a>
-                    <a href="uiux.html">UI/UX Design</a>
-                    <a href="app.html">App Design</a>
+                    <a href="webdesign.html" data-page="webdesign">Web Development</a>
+                    <a href="uiux.html" data-page="uiux">UI/UX Design</a>
+                    <a href="app.html" data-page="app">App Design</a>
+                    <a href="courses.html" data-page="courses">Courses & Training</a>
                 </div>
             </div>
-            <a href="index.html#skills" style="--i:4">Skills</a>
-            <a href="index.html#project" style="--i:5">Portfolio</a>
-            <a href="index.html#contact" style="--i:6">Contact</a>
+            <a href="courses.html" data-page="courses">Courses</a>
+            <a href="index.html#project" data-page="portfolio">Portfolio</a>
+            <a href="index.html#blog" data-page="blog">Blog</a>
+            <a href="hire.html" data-page="hire">Hire Me</a>
         </nav>
+        
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class='bx bx-sun'></i>
+            </button>
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
     </header>
 
-    <div class="container">
-       <h1  style="color: #0ef;"> UI/UX Design</h1>
-            <p>I am a UI/UX designer with three years of experience, specializing in crafting intuitive, user-centered designs that enhance digital experiences. My design philosophy revolves around the perfect balance of aesthetics, usability, and functionality, 
-                ensuring that every product I create not only looks visually stunning but also delivers a seamless user experience.</p>
+    <main id="main-content" class="service-page">
+        <div class="service-hero">
+            <i class='bx bx-palette icon-large'></i>
+            <h1>UI/UX <span>Design</span></h1>
+            <p>
+                I am a UI/UX designer with 3+ years of experience, specializing in crafting 
+                intuitive, user-centered designs that enhance digital experiences.
+            </p>
+        </div>
 
-              <h3>My Design Approach</h3>  
-<p>🔹 User-Centered & Data-Driven – I prioritize user research and usability testing to create designs that truly resonate with the target audience.</p>
-<p>🔹 Wireframing & Prototyping – I develop interactive wireframes and prototypes to visualize user journeys and refine interactions before development.</p>
-<p>🔹 Consistency & Branding – I ensure that every design aligns with brand identity while maintaining consistency across different platforms.</p>
-<p>🔹 Accessibility & Inclusivity – I design with accessibility in mind, ensuring that all users, including those with disabilities, can interact effortlessly.</p>
-<p>🔹 Seamless Collaboration – I work closely with developers, product managers, and stakeholders to bring ideas to life efficiently.</p>
+        <div class="service-section">
+            <h3><i class='bx bx-bulb'></i> My Design Approach</h3>
+            <ul>
+                <li>User-Centered & Data-Driven – Prioritizing user research and usability testing</li>
+                <li>Wireframing & Prototyping – Interactive wireframes to visualize user journeys</li>
+                <li>Consistency & Branding – Aligning design with brand identity</li>
+                <li>Accessibility & Inclusivity – Designing for all users</li>
+                <li>Seamless Collaboration – Working closely with developers and stakeholders</li>
+            </ul>
+        </div>
 
-            <h3>Tools & Technologies I Use</h3>
-<p>🎨 Design & Prototyping: Figma, Adobe XD, Sketch</p>
-<p>🎯 User Research & Testing: Maze, Hotjar, Google Analytics</p>
-<p>💻 Frontend Implementation: HTML, CSS, JavaScript, React.js</p>
-<p>⚡ Collaboration Tools: Notion, Slack, Trello</p>
+        <div class="service-section">
+            <h3><i class='bx bx-wrench'></i> Tools & Technologies</h3>
+            <ul>
+                <li>Design & Prototyping: Figma, Adobe XD, Sketch</li>
+                <li>User Research & Testing: Maze, Hotjar, Google Analytics</li>
+                <li>Frontend Implementation: HTML, CSS, JavaScript, React.js</li>
+                <li>Collaboration: Notion, Slack, Trello</li>
+            </ul>
+        </div>
 
-            <h3>Projects & Experience</h3>
-<p>I have worked on a variety of projects, from mobile apps to web platforms, each tailored to enhance user experience and drive engagement. Some of my notable projects include:</p>
+        <div class="service-section">
+            <h3><i class='bx bx-briefcase'></i> Projects & Experience</h3>
+            <p>I have worked on a variety of projects, from mobile apps to web platforms:</p>
+            <ul>
+                <li><strong>Mobile App Redesign</strong> – Increased user retention by 30%</li>
+                <li><strong>E-commerce Website</strong> – Intuitive checkout experience</li>
+                <li><strong>SaaS Dashboard</strong> – Focus on data visualization and usability</li>
+            </ul>
+        </div>
 
-<p>📌 [Project Name 1] – A mobile app redesign that increased user retention by 30%</p>
-<p>📌 [Project Name 2] – An e-commerce website with an intuitive checkout experience</p>
-<p>📌 [Project Name 3] – A SaaS dashboard with a focus on data visualization and usability</p>
+        <div class="service-section">
+            <h3><i class='bx bx-check-shield'></i> Why Work With Me?</h3>
+            <ul>
+                <li>Innovative & Detail-Oriented – Focus on finer details</li>
+                <li>User-Centric Mindset – Driven by real user needs</li>
+                <li>Tech-Savvy Designer – Understanding of design and development</li>
+            </ul>
+        </div>
 
-            <h3>Why Work With Me?</h3>
-<p>✅ Innovative & Detail-Oriented – I focus on the finer details while keeping the bigger picture in mind.</p>
-<p>✅ User-Centric Mindset – Every design decision is driven by real user needs and behavior.</p>
-<p>✅ Tech-Savvy Designer – My understanding of both design and development allows for smoother project execution.</p>
-
-<p>💡 Let’s collaborate to create exceptional user experiences that elevate your brand and captivate your audience! 🚀</p>
-
-
-    </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                💡 Let's collaborate to create exceptional user experiences!
+            </p>
+            <a href="hire.html" class="btn-box"><span>Hire Me</span></a>
+        </div>
+    </main>
 
     <div class="last-text">
-        <p>Developed With Love By Joseph Wambugu &copy;2024</p>
+        <p>Developed with ❤️ by Joseph Wambugu &copy; 2024</p>
+        <button class="top" aria-label="Back to top">
+            <i class='bx bx-up-arrow-alt'></i>
+        </button>
     </div>
 
-    <a href="#" class="top" id="scrollTopButton"><i class='bx bx-up-arrow-alt bx-fade-down'></i></a>
-
-    <script>
-        function toggleMenu() {
-            document.querySelector('.navbar').classList.toggle('active');
-        }
-        
-        const scrollTopButton = document.getElementById("scrollTopButton");
-        window.addEventListener("scroll", function() {
-            if (window.scrollY > 200) {
-                scrollTopButton.classList.add("show");
-            } else {
-                scrollTopButton.classList.remove("show");
-            }
-        });
-
-        scrollTopButton.addEventListener("click", function(e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
+    <!-- Hire Modal -->
+    <div class="hire-modal-overlay" id="hireModal" aria-hidden="true">
+        <div class="hire-modal" role="dialog" aria-modal="true" aria-labelledby="hireModalTitle">
+            <button class="hire-modal-close" onclick="closeHireModal()" aria-label="Close">
+                <i class='bx bx-x'></i>
+            </button>
+            <h3 id="hireModalTitle">Let's Talk</h3>
+            <p class="hire-modal-subtitle">
+                Choose how you'd like to reach me. I usually reply within a few hours.
+            </p>
+            <div class="hire-modal-options">
+                <a href="#" class="hire-option hire-option-whatsapp" data-contact="whatsapp">
+                    <i class='bx bxl-whatsapp'></i>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <span>Fastest response</span>
+                    </div>
+                </a>
+                <a href="#" class="hire-option hire-option-call" data-contact="call">
+                    <i class='bx bx-phone'></i>
+                    <div>
+                        <strong>Call</strong>
+                        <span>+254 786 964 081</span>
+                    </div>
+                </a>
+                <a href="#" class="hire-option hire-option-email" data-contact="email">
+                    <i class='bx bx-envelope'></i>
+                    <div>
+                        <strong>Email</strong>
+                        <span>wambugujosephgitimu@gmail.com</span>
+                    </div>
+                </a>
+            </div>
+            <p class="hire-modal-note">
+                <i class='bx bx-info-circle'></i>
+                <span id="hireModalContext">UI/UX Design Inquiry</span>
+            </p>
+        </div>
+    </div>
 
 </body>
 </html>
-
